@@ -32,20 +32,16 @@ var questions = [{
   answer:"Joseph"
 }];
 
-var highscores =[{
-  name: "Shraddha",
-  score: 11,
-}];
 
 function play(question, answer){
   var userAnswer = readlineSync.question(question);
   
   if(userAnswer.toLowerCase() === answer.toLowerCase()){
-    console.log("You are Right");
+    console.log("Right.. Well Done!");
     score=score+2;
   }
   else{
-    console.log("You are Wrong");
+    console.log("OOPS! You are Wrong");
     score--;
   }
   console.log("Current Score is: "+ score);
@@ -61,14 +57,11 @@ function game(){
 
 function showScores(){
   if(score >=5){
-    console.log("YAY! You SCORED: ", score);
+    console.log("WOW! You SCORED: ", score);
   }
   else{
     console.log("OOPS! You SCORED: ", score);
   }
-  console.log("Check out the high scores, if you should be there ping me and I'll update it");
-
-  highscores.map(score => console.log(score.name, " : ", score.score))
   
 }
 
